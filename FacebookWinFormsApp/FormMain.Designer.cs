@@ -28,9 +28,9 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea1 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
-            System.Windows.Forms.DataVisualization.Charting.Legend legend1 = new System.Windows.Forms.DataVisualization.Charting.Legend();
-            System.Windows.Forms.DataVisualization.Charting.Series series1 = new System.Windows.Forms.DataVisualization.Charting.Series();
+            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea2 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
+            System.Windows.Forms.DataVisualization.Charting.Legend legend2 = new System.Windows.Forms.DataVisualization.Charting.Legend();
+            System.Windows.Forms.DataVisualization.Charting.Series series2 = new System.Windows.Forms.DataVisualization.Charting.Series();
             this.checkBoxRememberUser = new System.Windows.Forms.CheckBox();
             this.pictureBoxProfile = new System.Windows.Forms.PictureBox();
             this.groupBoxFriendsMap = new System.Windows.Forms.GroupBox();
@@ -412,17 +412,17 @@
             // 
             // chartAnalyse
             // 
-            chartArea1.Name = "ChartArea1";
-            this.chartAnalyse.ChartAreas.Add(chartArea1);
-            legend1.Name = "Legend1";
-            this.chartAnalyse.Legends.Add(legend1);
+            chartArea2.Name = "ChartArea1";
+            this.chartAnalyse.ChartAreas.Add(chartArea2);
+            legend2.Name = "Legend1";
+            this.chartAnalyse.Legends.Add(legend2);
             this.chartAnalyse.Location = new System.Drawing.Point(3, 3);
             this.chartAnalyse.Name = "chartAnalyse";
-            series1.ChartArea = "ChartArea1";
-            series1.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.StackedColumn;
-            series1.Legend = "Legend1";
-            series1.Name = "data";
-            this.chartAnalyse.Series.Add(series1);
+            series2.ChartArea = "ChartArea1";
+            series2.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.StackedColumn;
+            series2.Legend = "Legend1";
+            series2.Name = "data";
+            this.chartAnalyse.Series.Add(series2);
             this.chartAnalyse.Size = new System.Drawing.Size(661, 294);
             this.chartAnalyse.TabIndex = 0;
             this.chartAnalyse.Text = "chart";
@@ -449,7 +449,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1236, 846);
+            this.ClientSize = new System.Drawing.Size(1226, 787);
             this.Controls.Add(this.groupBoxAnalyse);
             this.Controls.Add(this.groupBoxTopPic);
             this.Controls.Add(this.buttonLoginAndLogout);

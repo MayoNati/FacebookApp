@@ -21,11 +21,6 @@ namespace BasicFacebookFeatures
         public static bool s_UserAccess = false;
         FrmUserMessage frmUserMessage = null;
 
-        //public void SetFacebookLogic(FacebookLogic facebookLogic)
-        //{
-
-        //}
-        //public FormMain() { }
         public FormMain()
         {
             InitializeComponent();
