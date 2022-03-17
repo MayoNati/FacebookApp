@@ -28,32 +28,15 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataVisualization.Charting.LineAnnotation lineAnnotation5 = new System.Windows.Forms.DataVisualization.Charting.LineAnnotation();
-            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea7 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
-            System.Windows.Forms.DataVisualization.Charting.Legend legend7 = new System.Windows.Forms.DataVisualization.Charting.Legend();
-            System.Windows.Forms.DataVisualization.Charting.Series series9 = new System.Windows.Forms.DataVisualization.Charting.Series();
-            System.Windows.Forms.DataVisualization.Charting.Series series10 = new System.Windows.Forms.DataVisualization.Charting.Series();
-            System.Windows.Forms.DataVisualization.Charting.LineAnnotation lineAnnotation6 = new System.Windows.Forms.DataVisualization.Charting.LineAnnotation();
-            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea8 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
-            System.Windows.Forms.DataVisualization.Charting.Legend legend8 = new System.Windows.Forms.DataVisualization.Charting.Legend();
-            System.Windows.Forms.DataVisualization.Charting.Series series11 = new System.Windows.Forms.DataVisualization.Charting.Series();
-            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea9 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
-            System.Windows.Forms.DataVisualization.Charting.Legend legend9 = new System.Windows.Forms.DataVisualization.Charting.Legend();
-            System.Windows.Forms.DataVisualization.Charting.Series series12 = new System.Windows.Forms.DataVisualization.Charting.Series();
+            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea1 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
+            System.Windows.Forms.DataVisualization.Charting.Legend legend1 = new System.Windows.Forms.DataVisualization.Charting.Legend();
+            System.Windows.Forms.DataVisualization.Charting.Series series1 = new System.Windows.Forms.DataVisualization.Charting.Series();
             this.checkBoxRememberUser = new System.Windows.Forms.CheckBox();
             this.pictureBoxProfile = new System.Windows.Forms.PictureBox();
-            this.chart1 = new System.Windows.Forms.DataVisualization.Charting.Chart();
-            this.textBoxFromBirthday = new System.Windows.Forms.TextBox();
-            this.textBoxToBirthday = new System.Windows.Forms.TextBox();
-            this.buttonCalctulationAmountOfBirthdayByYearsRange = new System.Windows.Forms.Button();
             this.groupBoxFriendsMap = new System.Windows.Forms.GroupBox();
             this.buttonShowFriendsLocation = new System.Windows.Forms.Button();
             this.gMapControlFriendsMap = new GMap.NET.WindowsForms.GMapControl();
-            this.chart2 = new System.Windows.Forms.DataVisualization.Charting.Chart();
             this.buttonClearChart = new System.Windows.Forms.Button();
-            this.buttonCalculationAmountPic = new System.Windows.Forms.Button();
-            this.textBoxPicRangeTo = new System.Windows.Forms.TextBox();
-            this.textBoxPicRangeFrom = new System.Windows.Forms.TextBox();
             this.groupBoxProfile = new System.Windows.Forms.GroupBox();
             this.groupBox3 = new System.Windows.Forms.GroupBox();
             this.labelEmail = new System.Windows.Forms.Label();
@@ -68,17 +51,10 @@
             this.pictureBoxPopular2 = new System.Windows.Forms.PictureBox();
             this.textBoxStatus = new System.Windows.Forms.TextBox();
             this.buttonLoginAndLogout = new System.Windows.Forms.Button();
-            this.labelFromPicYears = new System.Windows.Forms.Label();
-            this.labelToPicYears = new System.Windows.Forms.Label();
-            this.groupBoxAmountPic = new System.Windows.Forms.GroupBox();
-            this.groupBoxAmountOfBirthdayByYearsRange = new System.Windows.Forms.GroupBox();
-            this.labelToBirthday = new System.Windows.Forms.Label();
-            this.labelFromBirthday = new System.Windows.Forms.Label();
             this.groupBoxTopPic = new System.Windows.Forms.GroupBox();
             this.buttonGetToPictureByLiked = new System.Windows.Forms.Button();
             this.groupBoxAnalyse = new System.Windows.Forms.GroupBox();
             this.flowLayoutPanel1 = new System.Windows.Forms.FlowLayoutPanel();
-            this.button2 = new System.Windows.Forms.Button();
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.textBoxFromYear = new System.Windows.Forms.TextBox();
@@ -89,9 +65,7 @@
             this.label3 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxProfile)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.chart1)).BeginInit();
             this.groupBoxFriendsMap.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.chart2)).BeginInit();
             this.groupBoxProfile.SuspendLayout();
             this.groupBox3.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxPopular0)).BeginInit();
@@ -99,8 +73,6 @@
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxPopular3)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxPopular4)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxPopular2)).BeginInit();
-            this.groupBoxAmountPic.SuspendLayout();
-            this.groupBoxAmountOfBirthdayByYearsRange.SuspendLayout();
             this.groupBoxTopPic.SuspendLayout();
             this.groupBoxAnalyse.SuspendLayout();
             this.flowLayoutPanel1.SuspendLayout();
@@ -126,61 +98,6 @@
             this.pictureBoxProfile.Size = new System.Drawing.Size(171, 196);
             this.pictureBoxProfile.TabIndex = 54;
             this.pictureBoxProfile.TabStop = false;
-            // 
-            // chart1
-            // 
-            lineAnnotation5.Name = "RangeOfYears";
-            this.chart1.Annotations.Add(lineAnnotation5);
-            chartArea7.Name = "ChartArea1";
-            this.chart1.ChartAreas.Add(chartArea7);
-            legend7.Name = "Legend1";
-            this.chart1.Legends.Add(legend7);
-            this.chart1.Location = new System.Drawing.Point(6, 76);
-            this.chart1.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
-            this.chart1.Name = "chart1";
-            this.chart1.Palette = System.Windows.Forms.DataVisualization.Charting.ChartColorPalette.None;
-            series9.ChartArea = "ChartArea1";
-            series9.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.StackedColumn;
-            series9.Legend = "Legend1";
-            series9.Name = "Female";
-            series10.ChartArea = "ChartArea1";
-            series10.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.StackedColumn;
-            series10.Legend = "Legend1";
-            series10.Name = "Male";
-            this.chart1.Series.Add(series9);
-            this.chart1.Series.Add(series10);
-            this.chart1.Size = new System.Drawing.Size(660, 189);
-            this.chart1.TabIndex = 56;
-            this.chart1.TabStop = false;
-            this.chart1.Text = "chart1";
-            // 
-            // textBoxFromBirthday
-            // 
-            this.textBoxFromBirthday.Location = new System.Drawing.Point(66, 42);
-            this.textBoxFromBirthday.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
-            this.textBoxFromBirthday.Name = "textBoxFromBirthday";
-            this.textBoxFromBirthday.Size = new System.Drawing.Size(95, 26);
-            this.textBoxFromBirthday.TabIndex = 57;
-            // 
-            // textBoxToBirthday
-            // 
-            this.textBoxToBirthday.Location = new System.Drawing.Point(200, 39);
-            this.textBoxToBirthday.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
-            this.textBoxToBirthday.Name = "textBoxToBirthday";
-            this.textBoxToBirthday.Size = new System.Drawing.Size(97, 26);
-            this.textBoxToBirthday.TabIndex = 58;
-            // 
-            // buttonCalctulationAmountOfBirthdayByYearsRange
-            // 
-            this.buttonCalctulationAmountOfBirthdayByYearsRange.Enabled = false;
-            this.buttonCalctulationAmountOfBirthdayByYearsRange.Location = new System.Drawing.Point(312, 26);
-            this.buttonCalctulationAmountOfBirthdayByYearsRange.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
-            this.buttonCalctulationAmountOfBirthdayByYearsRange.Name = "buttonCalctulationAmountOfBirthdayByYearsRange";
-            this.buttonCalctulationAmountOfBirthdayByYearsRange.Size = new System.Drawing.Size(123, 39);
-            this.buttonCalctulationAmountOfBirthdayByYearsRange.TabIndex = 59;
-            this.buttonCalctulationAmountOfBirthdayByYearsRange.Text = "Calculation";
-            this.buttonCalctulationAmountOfBirthdayByYearsRange.UseVisualStyleBackColor = true;
-            this.buttonCalctulationAmountOfBirthdayByYearsRange.Click += new System.EventHandler(this.buttonCalctulationAmountOfBirthdayByYearsRange_Click);
             // 
             // groupBoxFriendsMap
             // 
@@ -232,28 +149,6 @@
             this.gMapControlFriendsMap.TabIndex = 77;
             this.gMapControlFriendsMap.Zoom = 0D;
             // 
-            // chart2
-            // 
-            lineAnnotation6.Name = "RangeOfYears";
-            this.chart2.Annotations.Add(lineAnnotation6);
-            chartArea8.Name = "ChartArea1";
-            this.chart2.ChartAreas.Add(chartArea8);
-            legend8.Name = "Legend1";
-            this.chart2.Legends.Add(legend8);
-            this.chart2.Location = new System.Drawing.Point(6, 87);
-            this.chart2.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
-            this.chart2.Name = "chart2";
-            this.chart2.Palette = System.Windows.Forms.DataVisualization.Charting.ChartColorPalette.None;
-            series11.ChartArea = "ChartArea1";
-            series11.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Spline;
-            series11.Legend = "Legend1";
-            series11.Name = "Amount of Pictures";
-            this.chart2.Series.Add(series11);
-            this.chart2.Size = new System.Drawing.Size(658, 175);
-            this.chart2.TabIndex = 63;
-            this.chart2.TabStop = false;
-            this.chart2.Text = "chart2";
-            // 
             // buttonClearChart
             // 
             this.buttonClearChart.Location = new System.Drawing.Point(570, 66);
@@ -264,34 +159,6 @@
             this.buttonClearChart.Text = "Clear Chart";
             this.buttonClearChart.UseVisualStyleBackColor = true;
             this.buttonClearChart.Click += new System.EventHandler(this.buttonClearChart_Click);
-            // 
-            // buttonCalculationAmountPic
-            // 
-            this.buttonCalculationAmountPic.Enabled = false;
-            this.buttonCalculationAmountPic.Location = new System.Drawing.Point(310, 42);
-            this.buttonCalculationAmountPic.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
-            this.buttonCalculationAmountPic.Name = "buttonCalculationAmountPic";
-            this.buttonCalculationAmountPic.Size = new System.Drawing.Size(104, 37);
-            this.buttonCalculationAmountPic.TabIndex = 67;
-            this.buttonCalculationAmountPic.Text = "Calculation";
-            this.buttonCalculationAmountPic.UseVisualStyleBackColor = true;
-            this.buttonCalculationAmountPic.Click += new System.EventHandler(this.buttonCalculationAmountPic_Click);
-            // 
-            // textBoxPicRangeTo
-            // 
-            this.textBoxPicRangeTo.Location = new System.Drawing.Point(198, 53);
-            this.textBoxPicRangeTo.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
-            this.textBoxPicRangeTo.Name = "textBoxPicRangeTo";
-            this.textBoxPicRangeTo.Size = new System.Drawing.Size(97, 26);
-            this.textBoxPicRangeTo.TabIndex = 66;
-            // 
-            // textBoxPicRangeFrom
-            // 
-            this.textBoxPicRangeFrom.Location = new System.Drawing.Point(64, 53);
-            this.textBoxPicRangeFrom.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
-            this.textBoxPicRangeFrom.Name = "textBoxPicRangeFrom";
-            this.textBoxPicRangeFrom.Size = new System.Drawing.Size(95, 26);
-            this.textBoxPicRangeFrom.TabIndex = 65;
             // 
             // groupBoxProfile
             // 
@@ -348,7 +215,7 @@
             // textToPost
             // 
             this.textToPost.AutoSize = true;
-            this.textToPost.Location = new System.Drawing.Point(713, 820);
+            this.textToPost.Location = new System.Drawing.Point(5, 677);
             this.textToPost.Name = "textToPost";
             this.textToPost.Size = new System.Drawing.Size(85, 20);
             this.textToPost.TabIndex = 69;
@@ -356,7 +223,7 @@
             // 
             // buttonSetStatus
             // 
-            this.buttonSetStatus.Location = new System.Drawing.Point(1132, 809);
+            this.buttonSetStatus.Location = new System.Drawing.Point(424, 666);
             this.buttonSetStatus.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.buttonSetStatus.Name = "buttonSetStatus";
             this.buttonSetStatus.Size = new System.Drawing.Size(107, 28);
@@ -419,7 +286,7 @@
             // 
             // textBoxStatus
             // 
-            this.textBoxStatus.Location = new System.Drawing.Point(820, 809);
+            this.textBoxStatus.Location = new System.Drawing.Point(112, 666);
             this.textBoxStatus.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.textBoxStatus.Name = "textBoxStatus";
             this.textBoxStatus.Size = new System.Drawing.Size(304, 26);
@@ -435,72 +302,6 @@
             this.buttonLoginAndLogout.UseVisualStyleBackColor = true;
             this.buttonLoginAndLogout.Click += new System.EventHandler(this.buttonLoginAndLogout_Click);
             // 
-            // labelFromPicYears
-            // 
-            this.labelFromPicYears.AutoSize = true;
-            this.labelFromPicYears.Location = new System.Drawing.Point(12, 56);
-            this.labelFromPicYears.Name = "labelFromPicYears";
-            this.labelFromPicYears.Size = new System.Drawing.Size(46, 20);
-            this.labelFromPicYears.TabIndex = 79;
-            this.labelFromPicYears.Text = "From";
-            // 
-            // labelToPicYears
-            // 
-            this.labelToPicYears.AutoSize = true;
-            this.labelToPicYears.Location = new System.Drawing.Point(165, 56);
-            this.labelToPicYears.Name = "labelToPicYears";
-            this.labelToPicYears.Size = new System.Drawing.Size(27, 20);
-            this.labelToPicYears.TabIndex = 80;
-            this.labelToPicYears.Text = "To";
-            // 
-            // groupBoxAmountPic
-            // 
-            this.groupBoxAmountPic.Controls.Add(this.chart2);
-            this.groupBoxAmountPic.Controls.Add(this.labelToPicYears);
-            this.groupBoxAmountPic.Controls.Add(this.textBoxPicRangeFrom);
-            this.groupBoxAmountPic.Controls.Add(this.labelFromPicYears);
-            this.groupBoxAmountPic.Controls.Add(this.textBoxPicRangeTo);
-            this.groupBoxAmountPic.Controls.Add(this.buttonCalculationAmountPic);
-            this.groupBoxAmountPic.Location = new System.Drawing.Point(14, 942);
-            this.groupBoxAmountPic.Name = "groupBoxAmountPic";
-            this.groupBoxAmountPic.Size = new System.Drawing.Size(678, 272);
-            this.groupBoxAmountPic.TabIndex = 82;
-            this.groupBoxAmountPic.TabStop = false;
-            this.groupBoxAmountPic.Text = "Amount of picture by years range";
-            // 
-            // groupBoxAmountOfBirthdayByYearsRange
-            // 
-            this.groupBoxAmountOfBirthdayByYearsRange.Controls.Add(this.labelToBirthday);
-            this.groupBoxAmountOfBirthdayByYearsRange.Controls.Add(this.labelFromBirthday);
-            this.groupBoxAmountOfBirthdayByYearsRange.Controls.Add(this.chart1);
-            this.groupBoxAmountOfBirthdayByYearsRange.Controls.Add(this.textBoxFromBirthday);
-            this.groupBoxAmountOfBirthdayByYearsRange.Controls.Add(this.textBoxToBirthday);
-            this.groupBoxAmountOfBirthdayByYearsRange.Controls.Add(this.buttonCalctulationAmountOfBirthdayByYearsRange);
-            this.groupBoxAmountOfBirthdayByYearsRange.Location = new System.Drawing.Point(12, 656);
-            this.groupBoxAmountOfBirthdayByYearsRange.Name = "groupBoxAmountOfBirthdayByYearsRange";
-            this.groupBoxAmountOfBirthdayByYearsRange.Size = new System.Drawing.Size(680, 280);
-            this.groupBoxAmountOfBirthdayByYearsRange.TabIndex = 83;
-            this.groupBoxAmountOfBirthdayByYearsRange.TabStop = false;
-            this.groupBoxAmountOfBirthdayByYearsRange.Text = "Amount of birthday by years range";
-            // 
-            // labelToBirthday
-            // 
-            this.labelToBirthday.AutoSize = true;
-            this.labelToBirthday.Location = new System.Drawing.Point(167, 45);
-            this.labelToBirthday.Name = "labelToBirthday";
-            this.labelToBirthday.Size = new System.Drawing.Size(27, 20);
-            this.labelToBirthday.TabIndex = 84;
-            this.labelToBirthday.Text = "To";
-            // 
-            // labelFromBirthday
-            // 
-            this.labelFromBirthday.AutoSize = true;
-            this.labelFromBirthday.Location = new System.Drawing.Point(6, 45);
-            this.labelFromBirthday.Name = "labelFromBirthday";
-            this.labelFromBirthday.Size = new System.Drawing.Size(46, 20);
-            this.labelFromBirthday.TabIndex = 84;
-            this.labelFromBirthday.Text = "From";
-            // 
             // groupBoxTopPic
             // 
             this.groupBoxTopPic.Controls.Add(this.buttonGetToPictureByLiked);
@@ -511,7 +312,7 @@
             this.groupBoxTopPic.Controls.Add(this.pictureBoxPopular2);
             this.groupBoxTopPic.Location = new System.Drawing.Point(701, 555);
             this.groupBoxTopPic.Name = "groupBoxTopPic";
-            this.groupBoxTopPic.Size = new System.Drawing.Size(513, 245);
+            this.groupBoxTopPic.Size = new System.Drawing.Size(513, 221);
             this.groupBoxTopPic.TabIndex = 84;
             this.groupBoxTopPic.TabStop = false;
             this.groupBoxTopPic.Text = "Top 5 picture by like";
@@ -552,16 +353,6 @@
             this.flowLayoutPanel1.Name = "flowLayoutPanel1";
             this.flowLayoutPanel1.Size = new System.Drawing.Size(664, 300);
             this.flowLayoutPanel1.TabIndex = 86;
-            // 
-            // button2
-            // 
-            this.button2.Location = new System.Drawing.Point(1232, 574);
-            this.button2.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(104, 40);
-            this.button2.TabIndex = 92;
-            this.button2.Text = "Clear Chart";
-            this.button2.UseVisualStyleBackColor = true;
             // 
             // label1
             // 
@@ -621,17 +412,17 @@
             // 
             // chartAnalyse
             // 
-            chartArea9.Name = "ChartArea1";
-            this.chartAnalyse.ChartAreas.Add(chartArea9);
-            legend9.Name = "Legend1";
-            this.chartAnalyse.Legends.Add(legend9);
+            chartArea1.Name = "ChartArea1";
+            this.chartAnalyse.ChartAreas.Add(chartArea1);
+            legend1.Name = "Legend1";
+            this.chartAnalyse.Legends.Add(legend1);
             this.chartAnalyse.Location = new System.Drawing.Point(3, 3);
             this.chartAnalyse.Name = "chartAnalyse";
-            series12.ChartArea = "ChartArea1";
-            series12.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.StackedColumn;
-            series12.Legend = "Legend1";
-            series12.Name = "data";
-            this.chartAnalyse.Series.Add(series12);
+            series1.ChartArea = "ChartArea1";
+            series1.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.StackedColumn;
+            series1.Legend = "Legend1";
+            series1.Name = "data";
+            this.chartAnalyse.Series.Add(series1);
             this.chartAnalyse.Size = new System.Drawing.Size(661, 294);
             this.chartAnalyse.TabIndex = 0;
             this.chartAnalyse.Text = "chart";
@@ -658,12 +449,9 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1410, 1096);
+            this.ClientSize = new System.Drawing.Size(1236, 846);
             this.Controls.Add(this.groupBoxAnalyse);
             this.Controls.Add(this.groupBoxTopPic);
-            this.Controls.Add(this.button2);
-            this.Controls.Add(this.groupBoxAmountOfBirthdayByYearsRange);
-            this.Controls.Add(this.groupBoxAmountPic);
             this.Controls.Add(this.buttonLoginAndLogout);
             this.Controls.Add(this.textBoxStatus);
             this.Controls.Add(this.buttonSetStatus);
@@ -676,9 +464,7 @@
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Form1";
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxProfile)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.chart1)).EndInit();
             this.groupBoxFriendsMap.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.chart2)).EndInit();
             this.groupBoxProfile.ResumeLayout(false);
             this.groupBox3.ResumeLayout(false);
             this.groupBox3.PerformLayout();
@@ -687,10 +473,6 @@
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxPopular3)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxPopular4)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxPopular2)).EndInit();
-            this.groupBoxAmountPic.ResumeLayout(false);
-            this.groupBoxAmountPic.PerformLayout();
-            this.groupBoxAmountOfBirthdayByYearsRange.ResumeLayout(false);
-            this.groupBoxAmountOfBirthdayByYearsRange.PerformLayout();
             this.groupBoxTopPic.ResumeLayout(false);
             this.groupBoxAnalyse.ResumeLayout(false);
             this.groupBoxAnalyse.PerformLayout();
@@ -703,16 +485,8 @@
         #endregion
 		private System.Windows.Forms.CheckBox checkBoxRememberUser;
         private System.Windows.Forms.PictureBox pictureBoxProfile;
-        private System.Windows.Forms.DataVisualization.Charting.Chart chart1;
-        private System.Windows.Forms.TextBox textBoxFromBirthday;
-        private System.Windows.Forms.TextBox textBoxToBirthday;
-        private System.Windows.Forms.Button buttonCalctulationAmountOfBirthdayByYearsRange;
         private System.Windows.Forms.GroupBox groupBoxFriendsMap;
-        private System.Windows.Forms.DataVisualization.Charting.Chart chart2;
         private System.Windows.Forms.Button buttonClearChart;
-        private System.Windows.Forms.Button buttonCalculationAmountPic;
-        private System.Windows.Forms.TextBox textBoxPicRangeTo;
-        private System.Windows.Forms.TextBox textBoxPicRangeFrom;
         private System.Windows.Forms.GroupBox groupBoxProfile;
         private System.Windows.Forms.GroupBox groupBox3;
         private System.Windows.Forms.Label labelEmail;
@@ -728,18 +502,11 @@
         private GMap.NET.WindowsForms.GMapControl gMapControlFriendsMap;
         private System.Windows.Forms.TextBox textBoxStatus;
         private System.Windows.Forms.Button buttonLoginAndLogout;
-        private System.Windows.Forms.Label labelFromPicYears;
-        private System.Windows.Forms.Label labelToPicYears;
-        private System.Windows.Forms.GroupBox groupBoxAmountPic;
-        private System.Windows.Forms.GroupBox groupBoxAmountOfBirthdayByYearsRange;
-        private System.Windows.Forms.Label labelFromBirthday;
-        private System.Windows.Forms.Label labelToBirthday;
         private System.Windows.Forms.GroupBox groupBoxTopPic;
         private System.Windows.Forms.Button buttonGetToPictureByLiked;
         private System.Windows.Forms.Button buttonShowFriendsLocation;
         private System.Windows.Forms.GroupBox groupBoxAnalyse;
         private System.Windows.Forms.FlowLayoutPanel flowLayoutPanel1;
-        private System.Windows.Forms.Button button2;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.TextBox textBoxFromYear;

@@ -34,8 +34,7 @@ namespace BasicFacebookFeatures
             m_AppSettings = AppSettings.LoadFromFile();
             this.Size = m_AppSettings.LastWindowSize;
             this.checkBoxRememberUser.Checked = m_AppSettings.RemmeberUser;
-            buttonCalculationAmountPic.Enabled = true;
-            buttonCalctulationAmountOfBirthdayByYearsRange.Enabled = true;
+            groupBoxAnalyse.Enabled = true;
             SetButtonLoginLogout(eLogStatus.Login);
             if (m_AppSettings.RemmeberUser && !string.IsNullOrEmpty(m_AppSettings.LastAccessToken))
             {
@@ -45,13 +44,9 @@ namespace BasicFacebookFeatures
                     SetButtonLoginLogout(eLogStatus.Logout);
                     buttonLoginAndLogout.BackColor = Color.Red;
                     pictureBoxProfile.LoadAsync(facebookLogic.SetUserPic());
-                    buttonCalctulationAmountOfBirthdayByYearsRange.Enabled = true;
-                    buttonCalculationAmountPic.Enabled = true;
-                    //fetchPopularPhotos();
+                    groupBoxAnalyse.Enabled = true;
                     fetchPersonalDetailes();
-
                     facebookLogic.CollectionData();
-
                 }
                 catch (Exception mes)
                 {
@@ -60,57 +55,7 @@ namespace BasicFacebookFeatures
                 }
             }
         }
-
-        private void fetchPopularPhotos()
-        {
-            //facebookLogic.FetchMostPoplarPic();
-            //List<int> max = new List<int> { 0, 0, 0, 0, 0 };
-            //foreach (Album album in facebookLogic.m_LoggInUser.Albums)
-            //{
-            //    foreach (Photo photo in album.Photos)
-            //    {
-            //        for (int i = 0; i < 5; i++)
-            //        {
-            //            if (photo.LikedBy.Count() > max[i])
-            //            {
-            //                max.RemoveAt(i);
-            //                max.Insert(i, photo.LikedBy.Count());
-            //                if (i == 0)
-            //                {
-            //                    pictureBoxPopular0.LoadAsync(photo.PictureNormalURL);
-            //                    pictureBoxPopular0.Visible = true;
-            //                }
-            //                else if (i == 1)
-            //                {
-            //                    pictureBoxPopular1.LoadAsync(photo.PictureNormalURL);
-            //                    pictureBoxPopular1.Visible = true;
-            //                }
-            //                else if (i == 2)
-            //                {
-            //                    pictureBoxPopular2.LoadAsync(photo.PictureNormalURL);
-            //                    pictureBoxPopular2.Visible = true;
-            //                }
-            //                else if (i == 3)
-            //                {
-            //                    pictureBoxPopular3.LoadAsync(photo.PictureNormalURL);
-            //                    pictureBoxPopular3.Visible = true;
-            //                }
-            //                else if (i == 4)
-            //                {
-            //                    pictureBoxPopular4.LoadAsync(photo.PictureNormalURL);
-            //                    pictureBoxPopular4.Visible = true;
-            //                }
-            //                break;
-            //            }
-            //        }
-            //    }
-            //}
-            //if (!pictureBoxPopular0.Visible)
-            //{
-            //    MessageBox.Show("No Pictures");
-            //}
-        }
-
+        
         private void SetButtonLoginLogout(eLogStatus i_eLogStatus)
         {
             if (i_eLogStatus == eLogStatus.Login)
@@ -217,68 +162,16 @@ namespace BasicFacebookFeatures
 
         }
 
-        private void fetchByRangeYears(int i_yearTo, int i_yearFrom)
-        {
-            int countOfFemale = 0;
-            int countOfMale = 0;
-            List<User> userList = new List<User>();
-            facebookLogic.FetchByRangeYears(i_yearTo, i_yearFrom, out countOfFemale, out countOfMale);
-
-            int countFriends = userList.Count;
-            string tempString = i_yearTo.ToString() + "-" + i_yearFrom.ToString();
-            if (countOfMale == 0 && countOfFemale == 0)
-            {
-                chart1.Series["Male"].Points.AddXY(tempString, countOfMale);
-            }
-
-            if (countOfMale > 0)
-            {
-                chart1.Series["Male"].Points.AddXY(tempString, countOfMale);
-                chart1.Series["Male"].IsValueShownAsLabel = true;
-            }
-
-            if (countOfFemale > 0)
-            {
-                chart1.Series["Female"].Points.AddXY(tempString, countOfFemale);
-                chart1.Series["Female"].IsValueShownAsLabel = true;
-            }
-        }
-
-        private void buttonCalctulationAmountOfBirthdayByYearsRange_Click(object sender, EventArgs e)
-        {
-            if (textBoxFromBirthday.Text != "" && textBoxToBirthday.Text != "")
-            {
-                int input1 = Convert.ToInt32(textBoxFromBirthday.Text);
-                int input2 = Convert.ToInt32(textBoxToBirthday.Text);
-
-                if (input1 < input2)
-                {
-                    fetchByRangeYears(input1, input2);
-                }
-                else
-                {
-                    MessageBox.Show("The range is incorrect");
-                }
-            }
-            else
-                MessageBox.Show("The range is incorrect");
-        }
-
         private void buttonClearChart_Click(object sender, EventArgs e)
         {
-            chartAnalyse.Series["Amount of Pictures"].Points.Clear();
+            ClearChart();
         }
-
-        private void buttonCalculationAmountPic_Click(object sender, EventArgs e)
+        private void ClearChart()
         {
-            // facebookLogic.FetchPicAmountByRangeDate(2017,2018);
-            double from = 0;
-            double.TryParse(textBoxPicRangeFrom.Text, out from);
-            double to = 0;
-            double.TryParse(textBoxPicRangeTo.Text, out to);
-            chart2.Series["Amount of Pictures"].Points.AddXY(string.Format("{0}-{1}", from, to),
-                facebookLogic.FetchPicAmountByRangeDate(from, to));
-            chart2.Series["Amount of Pictures"].IsValueShownAsLabel = true;
+            foreach (Series chart in chartAnalyse.Series)
+            {
+                chart.Points.Clear();
+            }
         }
 
         private void buttonLoginAndLogout_Click(object sender, EventArgs e)
@@ -310,8 +203,7 @@ namespace BasicFacebookFeatures
                                 fetchPersonalDetailes();
                                 this.Invoke((MethodInvoker)delegate
                                 {
-                                    buttonCalctulationAmountOfBirthdayByYearsRange.Enabled = true;
-                                    buttonCalculationAmountPic.Enabled = true;
+                                    groupBoxAnalyse.Enabled = true;                                 
                                 });
 
                                 SetButtonLoginLogout(eLogStatus.Logout);
@@ -323,8 +215,7 @@ namespace BasicFacebookFeatures
                             {
                                 this.Invoke((MethodInvoker)delegate
                                 {
-                                    buttonCalctulationAmountOfBirthdayByYearsRange.Enabled = false;
-                                    buttonCalculationAmountPic.Enabled = false;
+                                    groupBoxAnalyse.Enabled = false;                                   
                                 });
 
                                 SetButtonLoginLogout(eLogStatus.Login);
@@ -345,8 +236,7 @@ namespace BasicFacebookFeatures
 
                             this.Invoke((MethodInvoker)delegate
                             {
-                                buttonCalctulationAmountOfBirthdayByYearsRange.Enabled = false;
-                                buttonCalculationAmountPic.Enabled = false;
+                                groupBoxAnalyse.Enabled = false;                                
                             });
 
                             SetButtonLoginLogout(eLogStatus.Login);
@@ -355,8 +245,7 @@ namespace BasicFacebookFeatures
                         {
                             this.Invoke((MethodInvoker)delegate
                             {
-                                buttonCalctulationAmountOfBirthdayByYearsRange.Enabled = true;
-                                buttonCalculationAmountPic.Enabled = true;
+                                groupBoxAnalyse.Enabled = true;                               
                             });
 
                             SetButtonLoginLogout(eLogStatus.Logout);
@@ -413,8 +302,6 @@ namespace BasicFacebookFeatures
 
                 }
             }
-
-
         }
 
         private void buttonShowFriendsLocation_Click(object sender, EventArgs e)
@@ -424,9 +311,10 @@ namespace BasicFacebookFeatures
 
         private void buttonCalculate_Click(object sender, EventArgs e)
         {
-
-            if (!string.IsNullOrWhiteSpace(comboBoxFilter.SelectedItem.ToString()))
+            if (comboBoxFilter.SelectedItem != null && !string.IsNullOrWhiteSpace(comboBoxFilter.SelectedItem.ToString()))
             {
+                
+
                 double from = 0;
                 double to = 0;
                 double.TryParse(textBoxFromYear.Text, out from);
@@ -437,7 +325,12 @@ namespace BasicFacebookFeatures
                 {
                     if (comboBoxFilter.SelectedItem.ToString() == "Birthday")
                     {
+                        if (chartAnalyse.Name!= comboBoxFilter.SelectedItem.ToString())
+                        {
+                            ClearChart();
+                        }
 
+                        chartAnalyse.Name = comboBoxFilter.SelectedItem.ToString();
                         if (chartAnalyse.Series.Count == 1)
                         {
                             chartAnalyse.Series[0].Name = "Male";
@@ -472,7 +365,12 @@ namespace BasicFacebookFeatures
                     }
                     else if (comboBoxFilter.SelectedItem.ToString() == "Picture Post")
                     {
+                        if (chartAnalyse.Name != comboBoxFilter.SelectedItem.ToString())
+                        {
+                            ClearChart();
+                        }
 
+                        chartAnalyse.Name = comboBoxFilter.SelectedItem.ToString();
                         if (chartAnalyse.Series.Count > 1)
                         {
                             for (int i = 1; i < chartAnalyse.Series.Count; i++)
