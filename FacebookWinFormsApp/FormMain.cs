@@ -55,7 +55,7 @@ namespace BasicFacebookFeatures
                 }
             }
         }
-        
+
         private void SetButtonLoginLogout(eLogStatus i_eLogStatus)
         {
             if (i_eLogStatus == eLogStatus.Login)
@@ -203,7 +203,7 @@ namespace BasicFacebookFeatures
                                 fetchPersonalDetailes();
                                 this.Invoke((MethodInvoker)delegate
                                 {
-                                    groupBoxAnalyse.Enabled = true;                                 
+                                    groupBoxAnalyse.Enabled = true;
                                 });
 
                                 SetButtonLoginLogout(eLogStatus.Logout);
@@ -215,7 +215,7 @@ namespace BasicFacebookFeatures
                             {
                                 this.Invoke((MethodInvoker)delegate
                                 {
-                                    groupBoxAnalyse.Enabled = false;                                   
+                                    groupBoxAnalyse.Enabled = false;
                                 });
 
                                 SetButtonLoginLogout(eLogStatus.Login);
@@ -236,7 +236,7 @@ namespace BasicFacebookFeatures
 
                             this.Invoke((MethodInvoker)delegate
                             {
-                                groupBoxAnalyse.Enabled = false;                                
+                                groupBoxAnalyse.Enabled = false;
                             });
 
                             SetButtonLoginLogout(eLogStatus.Login);
@@ -245,7 +245,7 @@ namespace BasicFacebookFeatures
                         {
                             this.Invoke((MethodInvoker)delegate
                             {
-                                groupBoxAnalyse.Enabled = true;                               
+                                groupBoxAnalyse.Enabled = true;
                             });
 
                             SetButtonLoginLogout(eLogStatus.Logout);
@@ -278,19 +278,26 @@ namespace BasicFacebookFeatures
                 frmUserMessage.Message = "Wait, Collecting Data";
                 frmUserMessage.Show();
                 frmUserMessage.OwnerMoved();
-
-                string[] picArray = facebookLogic.FetchMostPoplarPic();
-                if (frmUserMessage != null)
+                try
                 {
-                    frmUserMessage.Hide();
-                    frmUserMessage = null;
+                    string[] picArray = facebookLogic.FetchMostPoplarPic();
+
+                    if (frmUserMessage != null)
+                    {
+                        frmUserMessage.Hide();
+                        frmUserMessage = null;
+                    }
+                    pictureBoxPopular0.LoadAsync(picArray[0]);
+                    pictureBoxPopular1.LoadAsync(picArray[1]);
+                    pictureBoxPopular2.LoadAsync(picArray[2]);
+                    pictureBoxPopular3.LoadAsync(picArray[3]);
+                    pictureBoxPopular4.LoadAsync(picArray[4]);
+                }
+                catch(Exception mess)
+                {
+                    MessageBox.Show(mess.Message);
                 }
 
-                pictureBoxPopular0.LoadAsync(picArray[0]);
-                pictureBoxPopular1.LoadAsync(picArray[1]);
-                pictureBoxPopular2.LoadAsync(picArray[2]);
-                pictureBoxPopular3.LoadAsync(picArray[3]);
-                pictureBoxPopular4.LoadAsync(picArray[4]);
 
             }
             finally
@@ -313,19 +320,19 @@ namespace BasicFacebookFeatures
         {
             if (comboBoxFilter.SelectedItem != null && !string.IsNullOrWhiteSpace(comboBoxFilter.SelectedItem.ToString()))
             {
-                
+
 
                 double from = 0;
                 double to = 0;
                 double.TryParse(textBoxFromYear.Text, out from);
                 double.TryParse(textBoxToYear.Text, out to);
 
-                
+
                 if (from <= to && !(string.IsNullOrWhiteSpace(textBoxFromYear.Text) && string.IsNullOrWhiteSpace(textBoxToYear.Text)))
                 {
                     if (comboBoxFilter.SelectedItem.ToString() == "Birthday")
                     {
-                        if (chartAnalyse.Name!= comboBoxFilter.SelectedItem.ToString())
+                        if (chartAnalyse.Name != comboBoxFilter.SelectedItem.ToString())
                         {
                             ClearChart();
                         }
@@ -396,7 +403,7 @@ namespace BasicFacebookFeatures
             {
                 MessageBox.Show("Please select analyse data");
             }
-           
+
 
         }
     }

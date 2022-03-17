@@ -24,7 +24,7 @@ namespace BasicFacebookFeatures
         {
             FacebookWrapper.FacebookService.s_CollectionLimit = 10000;
             bool flag = false;
-            
+
             try
             {
                 FacebookWrapper.LoginResult m_LoginResult = FacebookService.Login("289790089925279", "email",
@@ -85,7 +85,7 @@ namespace BasicFacebookFeatures
         {
             bool flag = false;
             //   FacebookService.LogoutWithUI();\
-          
+
 
             FacebookService.Logout();
             m_LoginResult = null;
@@ -141,8 +141,6 @@ namespace BasicFacebookFeatures
                     {
                         if (validateYear >= i_yearFrom && validateYear <= i_yearTo)
                         {
-
-                            //userList.Add(friend);
                             if (friend.Gender == User.eGender.female)
                             {
                                 countFemale++;
@@ -189,19 +187,9 @@ namespace BasicFacebookFeatures
         public string[] FetchMostPoplarPic()
         {
 
-            //Dictionary<string, int> picAndLikeDic = new Dictionary<string, int>();
             List<string> allPhotos = new List<string>();
             string[] picArray = new string[5];
             Dictionary<string, int> photoAndLike = new Dictionary<string, int>();
-
-            //if (m_PhotoList.Count == 0)
-            //{
-            //    updatePhotosList();
-            //}
-            //if (m_PostList.Count == 0)
-            //{
-            //    updatePostList();
-            //}
 
             if (m_AlbumList.Count == 0)
             {
@@ -218,12 +206,7 @@ namespace BasicFacebookFeatures
                     {
                         foreach (Photo photo in album.Photos)
                         {
-                            try
-                            {
-                                m_AllPhotos.Add(photo.PictureNormalURL);
-                               
-                            }
-                            catch { }
+                            m_AllPhotos.Add(photo.PictureNormalURL);
                         }
                     }
                 }
@@ -240,115 +223,11 @@ namespace BasicFacebookFeatures
                     string keyOfMaxValue = photoAndLike.Aggregate((x, y) => x.Value > y.Value ? x : y).Key;
                     picArray[i] = keyOfMaxValue;
                     photoAndLike.Remove(keyOfMaxValue);
-
                 }
-                 ;
-
-                //List<int> max = new List<int> { 0, 0, 0, 0, 0 };
-                //foreach (Album album in m_AlbumList)
-                //{
-                //    foreach (Photo photo in album.Photos)
-                //    {
-                //        for (int i = 0; i < 5; i++)
-                //        {
-                //            if (photo.LikedBy.Count() > max[i])
-                //            {
-                //                max.RemoveAt(i);
-                //                max.Insert(i, photo.LikedBy.Count());
-                //                if (i == 0)
-                //                {
-                //                    picArray[0] = photo.PictureNormalURL;
-                //                }
-                //                else if (i == 1)
-                //                {
-                //                    picArray[1] = photo.PictureNormalURL;
-                //                }
-                //                else if (i == 2)
-                //                {
-                //                    picArray[2] = photo.PictureNormalURL;
-                //                }
-                //                else if (i == 3)
-                //                {
-                //                    picArray[3] = photo.PictureNormalURL;
-                //                }
-                //                else if (i == 4)
-                //                {
-                //                    picArray[4] = photo.PictureNormalURL;
-                //                }
-                //                break;
-                //            }
-                //        }
-                //    }
-                //}
-                //if (m_AllPhotos.Count == 0)
-                //{
-
-                //    List<Page> pageList = new List<Page>();
-                //    foreach (Page page in m_LoggInUser.LikedPages)
-                //    {
-                //        pageList.Add(page);
-                //    }
-
-                //foreach (Album album in m_AlbumList)
-                //{
-                //    foreach (Photo photo in album.Photos)
-                //    {
-                //        try
-                //        {
-                //            allPhotos.Add(photo.PictureNormalURL);
-
-                //        }
-                //        catch 
-                //        {
-
-                //        }
-                //        //picAndLikeDic.Add(photo.PictureNormalURL, photo.LikedBy.Count);
-                //    }
-                //}
-                //       }
-
-                //int maxNum = allPhotos.Count;
-                //Random rn = new Random();
-
-
-                //for (int i = 0; i < 5; i++)
-                //{
-                //    int num = rn.Next(0, maxNum);
-                //    picArray[i] = allPhotos[num];
-                //}
-
-                //foreach (Photo photo in m_PhotoList)
-                //{
-                //    var alb = photo;
-                //    picAndLikeDic.Add(photo.PictureNormalURL, photo.LikedBy.Count);
-                //}
-
-                ;
-                //foreach (Post post in m_PostList)
-                //{
-                //    if (post.Type == FacebookWrapper.ObjectModel.Post.eType.photo)
-                //    {
-
-                //        picAndLikeDic.Add(post.PictureURL, post.LikedBy.Count);
-                //    }
-                //}
-
-                //foreach (Post post in m_PostList)
-                //{
-
-
-                //    if (post.Type == FacebookWrapper.ObjectModel.Post.eType.photo)
-                //    {
-                //        //             var like = post.Like();
-                //        var like1 = post.LikedBy.Count();
-                //        ;
-                //    }
-                //}
             }
             catch
             {
-                ;
-
+                throw new Exception("Fetch most poplar pic failed");
             }
             return picArray;
         }
@@ -428,7 +307,7 @@ namespace BasicFacebookFeatures
         private void updatePhotosList()
         {
             FacebookObjectCollection<Photo> ph = new FacebookObjectCollection<Photo>();
-            List<FacebookObjectCollection<Photo>> phList= new List<FacebookObjectCollection<Photo>>();
+            List<FacebookObjectCollection<Photo>> phList = new List<FacebookObjectCollection<Photo>>();
             Dictionary<string, int> photoAndLike = new Dictionary<string, int>();
             Random rnd = new Random();
             m_PhotoList.Clear();
@@ -441,7 +320,7 @@ namespace BasicFacebookFeatures
                 //m_AllPhotos.Clear();
                 foreach (Album album in m_AlbumList)
                 {
-                   
+
                     //ph = album.Photos;
                     //phList.Add(album.Photos);
                     foreach (Photo photo in album.Photos)
@@ -502,10 +381,8 @@ namespace BasicFacebookFeatures
             }
             foreach (User friend in m_FriendsList)
             {
-
                 try
                 {
-                    //double.TryParse()
                     latitud = Convert.ToDouble(friend.Location.Location.Latitude);
                 }
                 catch
@@ -521,11 +398,8 @@ namespace BasicFacebookFeatures
                 {
                     Longitude = getRandomValue(eLatAndLng.Longitude);
                 }
-
                 locationList.Add(string.Format("{0},{1}", latitud, Longitude));
-
             }
-
             return locationList;
         }
 
@@ -550,30 +424,9 @@ namespace BasicFacebookFeatures
 
         public void CollectionData()
         {
-            //Object state = new object();
-        
             ThreadPool.QueueUserWorkItem(new WaitCallback((a) => updateFriendsList()));
             ThreadPool.QueueUserWorkItem(new WaitCallback((a) => updatePostList()));
             ThreadPool.QueueUserWorkItem(new WaitCallback((a) => updateAlbumList()));
-
-
-            //while (true)
-            //{
-            //    Console.WriteLine("Thread {0} ", Thread.CurrentThread.GetHashCode()); //{0}((Akshay)obj).id); //{1}Thread.Sleep(100);
-
-            //    Thread.Sleep(1000);
-            //    Console.WriteLine("status1: " + status1.ToString());
-            //    Console.WriteLine("status2: " + status2.ToString());
-            //    Console.WriteLine("status3: " + status3.ToString());
-
-
-            //}
-            //ThreadPool.QueueUserWorkItem(new WaitCallback((a) => updateAlbumList()));
-            //updatePostList();
-            //updateAlbumList();
-            //updateFriendsListList();
-            //updatePhotosList();
         }
-
     }
 }
